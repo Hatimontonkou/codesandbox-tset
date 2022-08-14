@@ -118,36 +118,66 @@
  * スプレッド構文　 ...
  */
 // 配列の展開
-const arr1 = [1, 2];
-console.log(arr1);
-console.log(...arr1);
+// const arr1 = [1, 2];
+// console.log(arr1);
+// console.log(...arr1);
 
-const sumFunc = (num1, num2) => {
-  console.log(num1 + num2);
-};
-sumFunc(arr1[0], arr1[1]);
-sumFunc(...arr1);
+// const sumFunc = (num1, num2) => {
+//   console.log(num1 + num2);
+// };
+// sumFunc(arr1[0], arr1[1]);
+// sumFunc(...arr1);
 
-//まとめる
-const arr2 = [1, 2, 3, 4, 5];
-const [num1, num2, ...arr3] = arr2;
-console.log(num1);
-console.log(num2);
-console.log(arr3);
+// //まとめる
+// const arr2 = [1, 2, 3, 4, 5];
+// const [num1, num2, ...arr3] = arr2;
+// console.log(num1);
+// console.log(num2);
+// console.log(arr3);
 
-// 配列のコピー、結合
-const arr4 = [10, 20];
-const arr5 = [30, 40];
+// // 配列のコピー、結合
+// const arr4 = [10, 20];
+// const arr5 = [30, 40];
 
-const arr6 = [...arr4];
-arr6[0] = 100;
-console.log(arr6);
-console.log(arr4);
+// const arr6 = [...arr4];
+// arr6[0] = 100;
+// console.log(arr6);
+// console.log(arr4);
 
-const arr7 = [...arr4, ...arr5];
-console.log(arr7);
+// const arr7 = [...arr4, ...arr5];
+// console.log(arr7);
 
-const arr8 = arr4;
-console.log(arr8);
-arr8[0] = 100;
-console.log(arr4);
+// const arr8 = arr4;
+// console.log(arr8);
+// arr8[0] = 100;
+// console.log(arr4);
+
+/**
+ * mapやfilterを使った配列の処理
+ */
+const nameArr = ["ルアン", "ゆや", "atsu"];
+for (let i = 0; i < nameArr.length; i++) {
+  console.log(`${i}番目は${nameArr[i]}です。`);
+}
+
+const nameArr2 = nameArr.map((name) => {
+  return name;
+});
+console.log(nameArr2);
+
+nameArr.map((name, i) => console.log(`${i}番目は${name}です。`));
+
+const numArr = [1, 2, 3, 4, 5];
+const newNumArr = numArr.filter((num) => {
+  return num % 2 === 0;
+});
+console.log(newNumArr);
+
+const newNameArr = nameArr.map((name) => {
+  if (name === "atsu") {
+    return name;
+  } else {
+    return `${name}さん`;
+  }
+});
+console.log(newNameArr);
